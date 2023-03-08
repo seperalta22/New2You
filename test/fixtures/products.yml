@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
-  price: 9.99
+PS5:
+  title: PS5
+  description: Una playstation 5 en buen estado
+  price: 999.99
 
-two:
-  title: MyString
-  description: MyText
-  price: 9.99
+Xbox:
+  title: Xbox
+  description: Una xbox en buen estado
+  price: 48953.99
