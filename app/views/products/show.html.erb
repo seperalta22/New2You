@@ -1,3 +1,6 @@
+<%= image_tag @product.image, width: "200px" if @product.image.attached? %>
 <h1><%= @product.title %></h1>
 <p> <%= @product.description %></p>
 <h3>$ <%= @product.price %></h3>
+<%= link_to 'Edit product', edit_product_path(@product) %>
+<%= link_to 'Delete product', product_path(@product),  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>

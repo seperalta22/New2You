@@ -33,4 +33,27 @@ class ProductControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :unprocessable_entity
   end
+
+  test 'should get edit' do
+    get edit_product_path(products(:PS5))
+    assert_response :success
+  end
+
+  test 'should update a product' do
+    patch product_path(products(:PS5)), params: { product: { title: 'PS5', description: 'The new PS5', price: 500 } }
+    assert_redirected_to products_path
+  end
+
+  test 'should not update a product with invalid data' do
+    patch product_path(products(:PS5)), params: { product: { title: 'PS5', description: 'The new PS5', price: -1 } }
+    assert_response :unprocessable_entity
+  end
+
+  test 'should delete a product' do
+    assert_difference('Product.count', -1) do
+      delete product_path(products(:PS5))
+    end
+
+    assert_redirected_to products_path
+  end
 end
