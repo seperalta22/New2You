@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.with_attached_image
   end
 
   def show
-    @product = Product.find(params[:id])
+    product
   end
 
   def new
@@ -15,35 +15,36 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      redirect_to products_path, notice: 'Product was successfully created.'
+      redirect_to products_path, notice: t('products.create.success')
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @product = Product.find(params[:id])
+    product
   end
 
   def update
-    @product = Product.find(params[:id])
-
-    if @product.update(product_params)
-      redirect_to products_path, notice: 'Product was successfully updated.'
+    if product.update(product_params)
+      redirect_to products_path, notice: t('products.update.success')
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
-    redirect_to products_path, notice: 'Product was successfully deleted.', status: :see_other
+    product.destroy
+    redirect_to products_path, notice: t('products.destroy.success'), status: :see_other
   end
 
   private
 
   def product_params
     params.require(:product).permit(:title, :price, :description, :image)
+  end
+
+  def product
+    @product ||= Product.find(params[:id])
   end
 end
