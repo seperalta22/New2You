@@ -1,52 +1,62 @@
 es:
-    activerecord:
+  activerecord:
+    models:
+      product: Producto
+    attributes:
+      product:
+        title: Titulo
+        description: Descripcion
+        price: Precio
+        image: Imagen
+    errors:
       models:
-        product: Producto
-      attributes:
         product:
-          title: Titulo
-          description: Descripcion
-          price: Precio
-          image: Imagen
-      errors:
-        models:
-          product:
-            attributes:
-              title:
-                blank: no puede estar en blanco
-              description:
-                blank: no puede estar en blanco
-              price:
-                blank: no puede estar en blanco
-                not_a_number: no es un numero
-              image:
-                blank: no puede estar en blanco
-    common:
-      back: Volver
-      confirm: ¿Estás seguro?
-      yes: Si
-      no: No
-      add: Agregar Producto
-    helpers:
-      submit:
-        product:
-          create: Crear Producto
-          update: Actualizar Producto
-    products:
-      index:
-        title: Productos
-        new: Nuevo Producto
-      show:
-        title: Producto
-        edit: Editar Producto
-        delete: Eliminar Producto
-      new:
-        title: Nuevo Producto
-      edit:
-        title: Editar Producto
-      create:
-        success: Producto creado con éxito
-      update:
-        success: Producto actualizado con éxito
-      destroy:
-        success: Producto eliminado con éxito
+          attributes:
+            title:
+              blank: no puede estar en blanco
+            description:
+              blank: no puede estar en blanco
+            price:
+              blank: no puede estar en blanco
+              not_a_number: no es un numero
+            image:
+              blank: no puede estar en blanco
+  common:
+    back: Volver
+    confirm: ¿Estás seguro?
+    yes: Si
+    no: No
+    add: Agregar Producto
+    edit: Editar
+    destroy: Eliminar
+  helpers:
+    submit:
+      product:
+        create: Crear Producto
+        update: Actualizar Producto
+  products:
+    index:
+      title: Productos
+      new: Nuevo Producto
+    show:
+      title: Producto
+      edit: Editar Producto
+      delete: Eliminar Producto
+    new:
+      title: Nuevo Producto
+    edit:
+      title: Editar Producto
+    create:
+      success: Producto creado con éxito
+    update:
+      success: Producto actualizado con éxito
+    destroy:
+      success: Producto eliminado con éxito
+  categories:
+    index:
+      title: Categorias
+      new: Nueva Categoria
+    edit:
+      title: "Editar Categoria"
+    new:
+      title: "Crear Categoria"

@@ -3,4 +3,4 @@
 <p> <%= @product.description %></p>
 <h3>$ <%= @product.price %></h3>
 <%= link_to t(".edit"), edit_product_path(@product) %>
-<%= link_to t(".delete"), product_path(@product),  data: { turbo_method: :delete, turbo_confirm: t("common.confirm") } %>
+<%= link_to t(".delete"), product_path(@product), data: { turbo_method: :delete, turbo_confirm: t('common.confirm') } %>
