@@ -4,8 +4,10 @@ PS5:
   title: PS5
   description: Una playstation 5 en buen estado
   price: 999.99
+  category: video-games
 
 Xbox:
   title: Xbox
   description: Una xbox en buen estado
   price: 48953.99
+  category: video-games

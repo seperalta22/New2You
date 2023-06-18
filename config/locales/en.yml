@@ -1,4 +1,26 @@
 en:
+  activerecord:
+    models:
+      product: Product
+    attributes:
+      product:
+        title: Title
+        description: Description
+        price: Price
+        image: Image
+    errors:
+      models:
+        product:
+          attributes:
+            title:
+              blank: can't be blank
+            description:
+              blank: can't be blank
+            price:
+              blank: can't be blank
+              not_a_number: is not a number
+            image:
+              blank: can't be blank
   products:
     index:
       title: "Products"
@@ -6,16 +28,23 @@ en:
       title: "Edit product"
     new:
       title: "Add product"
+    create:
+      success: "Product created successfully"
+    update:
+      success: "Product updated successfully"
+    destroy:
+      success: "Product deleted successfully"
   categories:
     index:
-      title: "Categories"
       new: "New Category"
-    edit:
-      title: "Edit Category"
-    new:
-      title: "Create Category"
+      title: "Categories"
+    create:
+      success: "Category successfully created"
+    update:
+      success: "Category successfully updated"
   common:
     edit: "Edit"
     destroy: "Delete"
     back: "Back"
     confirm: "Are you sure?"
+    add: "Add"

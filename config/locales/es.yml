@@ -54,9 +54,9 @@ es:
       success: Producto eliminado con éxito
   categories:
     index:
-      title: Categorias
-      new: Nueva Categoria
-    edit:
-      title: "Editar Categoria"
-    new:
-      title: "Crear Categoria"
+      new: "Nueva Categoria"
+      title: "Categorias"
+    create:
+      success: "Categoria creada exitosamente"
+    update:
+      success: "Categoria actualizada correctamente"

@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.all.order(name: :asc)
   end
 
   # GET /categories/new
@@ -12,7 +12,9 @@ class CategoriesController < ApplicationController
   end
 
   # GET /categories/1/edit
-  def edit; end
+  def edit
+    @category
+  end
 
   # POST /categories or /categories.json
   def create
@@ -20,7 +22,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to categories_url, notice: 'Category was successfully created.' }
+        format.html { redirect_to categories_url, notice: t('categories.create.success') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -31,7 +33,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to categories_url, notice: 'Category was successfully updated.' }
+        format.html { redirect_to categories_url, notice: t('categories.update.success') }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -43,7 +45,7 @@ class CategoriesController < ApplicationController
     @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
+      format.html { redirect_to categories_url, notice: t('categories.destroy.success') }
     end
   end
 

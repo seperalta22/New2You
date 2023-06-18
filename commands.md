@@ -1,5 +1,5 @@
 # github.
 
-git add . 
-git commit -m "add some translation"
+git add .
+git commit -m "add category to product"
 git push 
